@@ -3,3 +3,4 @@ for i in range(0, 100):
     print(f"{i:02d}", end="")
     if i != 99:
         print(f", ", end="")
+print()
