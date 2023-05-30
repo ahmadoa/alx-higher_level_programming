@@ -4,12 +4,13 @@
 
 class Square:
     """class Square"""
+
     def __init__(self, size=0):
         """Initializes new square
         Args:
             size (int): size of square
         """
-        self.__size == size
+        self.__size = size
 
     @property
     def size(self):
@@ -25,7 +26,7 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
-            raise ValueError("size must >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
