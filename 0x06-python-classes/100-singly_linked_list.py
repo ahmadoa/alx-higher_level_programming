@@ -12,13 +12,13 @@ class Node:
             data (int): data of new Node.
             next_node (Node): the new node of the new Node.
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
         """gets val of data"""
-        return self.__data
+        return (self.__data)
 
     @data.setter
     def data(self, value):
@@ -30,7 +30,7 @@ class Node:
     @property
     def next_node(self):
         """gets val of next_node"""
-        return self.__next_node
+        return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
@@ -54,7 +54,10 @@ class SinglyLinkedList:
             value (Node): node to add
         """
         new_node = Node(value)
-        if new_node.next_node = None:
+        if self.__head = None:
+            new_node.next_node = None
+            self.__head = new_node
+        elif self.__head.data > value:
             new_node.next_node = self.__head
             self.__head = new_node
         else:
