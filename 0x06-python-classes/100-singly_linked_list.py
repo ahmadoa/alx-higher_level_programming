@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Defining class Node"""
+
+
 class Node:
+    """Class Node"""
+
     def __init__(self, data, next_node=None):
         """Initialize a new Node.
 
@@ -36,6 +41,8 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Class SinglyLinkedList"""
+
     def __init__(self):
         """Initialize SinglyLinkedList"""
         self.__head = None
