@@ -20,7 +20,7 @@ class MagicClass:
 
     def area(self):
         """Returns area of MagicClass"""
-        return (slef.__radius ** 2 * math.pi)
+        return (self.__radius ** 2 * math.pi)
 
     def circumference(self):
         """returns circumference of MagicClass"""
