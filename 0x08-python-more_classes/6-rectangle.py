@@ -3,7 +3,11 @@
 
 
 class Rectangle:
-    """class Rectangle"""
+    """class Rectangle
+
+    Attributes:
+        number_of_instances (int): number of instances
+    """
 
     number_of_instances = 0
 
