@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """defining a new class Rectangle"""
 
 
