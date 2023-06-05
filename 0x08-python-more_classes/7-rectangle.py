@@ -7,7 +7,7 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): number of instances
-        print_symbol (str): symbol for string representation
+        print_symbol (any): symbol for string representation
     """
 
     number_of_instances = 0
@@ -76,7 +76,7 @@ class Rectangle:
         printable = []
         for i in range(self.__height):
             for j in range(self.__width):
-                printable.append(print_symbol)
+                printable.append(str(self.print_symbol))
             if i != self.__height - 1:
                 printable.append("\n")
         return ("".join(printable))
