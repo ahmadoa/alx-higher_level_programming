@@ -35,8 +35,8 @@ if __name__ == "__main__":
         if (exists(y)):
             return False
         index = 0
-        while index < x:
-            if abs(a[index][1] - y) == abs(index - x):
+        while (index < x):
+            if abs(solution[index][1] - y) == abs(index - x):
                 return False
             index += 1
         return True
@@ -56,4 +56,4 @@ if __name__ == "__main__":
                     print(solution)
                 else:
                     nqueens(x + 1)
-    nqueen(0)
+    nqueens(0)
