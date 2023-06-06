@@ -1,0 +1,45 @@
+Using 4-print_square.py function
+********************************
+
+A function gets a size parameter with presentes the width
+and height of square
+
+- Using it
+
+``print_square(size)`` size must be an int and greater or equal to 0
+
+::
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square(3)
+	###
+	###
+	###
+
+::
+
+	>>> print_square(0)
+
+::
+
+	>>> print_square(-5)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+::
+
+	>>> print_square(7.8)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square(-8.7)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square("Ahmad")
+	Traceback (most recent call last):
+	TypeError: size must be an integer

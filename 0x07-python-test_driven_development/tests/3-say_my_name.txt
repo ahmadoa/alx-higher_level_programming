@@ -1,0 +1,37 @@
+Using 3-say_my_name.py
+**********************
+
+``say_my_name(first_name, last_name="")`` has 2 args, first_name & last_name
+
+- Usage
+
+The first_name arg is needed, the second has a default val to empty
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Ahmad", "Ouladaouid")
+	My name is Ahmad Ouladaouid
+
+::
+
+	>>> say_my_name("Ahmad")
+	My name is Ahmad 
+
+::
+
+	>>> say_my_name(1, 1)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name(21, "Oa")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("Ahmad", 21)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
