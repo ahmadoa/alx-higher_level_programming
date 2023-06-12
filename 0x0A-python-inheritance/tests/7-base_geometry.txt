@@ -1,0 +1,26 @@
+7-base_geometry
+***************
+
+
+importing class:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+check if module exists docstring:
+	>>> dc = __import__('7-base_geometry').__doc__
+	>>> len(dc) > 1
+	True
+
+check for class docstring:
+	>>> clase = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>> len(clase) > 1
+	True
+
+check for area method docstring:
+	>>> zone = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	>>> len(zone) > 1
+	True
+
+check for integer_validator method docstring:
+	>>> check_int = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> len(check_int) > 1
+	True
