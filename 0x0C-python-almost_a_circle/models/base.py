@@ -2,6 +2,8 @@
 """defining Base module"""
 import json
 import os
+import csv
+import turtle
 
 
 class Base:
@@ -82,3 +84,68 @@ class Base:
                 for dictu in list_dicts:
                     list_instances.append(cls.create(**dictu))
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """write the csv serialization of a list of objects to csv file
+        Args:
+            list_objs: a list of instances
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as file:
+            if list_objs is None or list_objs == []:
+                file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fields = ["id", "width", "height", "x", "y"]
+                else:
+                    fields = ["id", "size", "x", "y"]
+                w = csv.DictWriter(file, fieldnames=fields)
+                w.writeheader()
+                w.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize csv from a file"""
+        filename = cls.__name__ + ".csv"
+        list_i = []
+        if os.path.exists(filename):
+            with open(filename, "r") as file:
+                read = csv.reader(file, delimiter=",")
+                if cls.__name__ == "Rectangle":
+                    fields = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fields = ["id", "size", "x", "y"]
+                for i, row in enumerate(read):
+                    if i > 0:
+                        el = cls(1, 1)
+                        for j, k in enumerate(row):
+                            if k:
+                                setattr(el, fields[j], int(e))
+                        list_i.append(el)
+        return list_i
+
+    @classmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws the rectangles and squares
+        Args:
+            list_rectangles: a list of rectangle instances
+            list_squares: a list of square instances
+        """
+        window = turtle.Screen()
+        pen = turtle.Pen()
+        figs = list_rectangles + list_squares
+
+        for f in figs:
+            pen.up()
+            pen.goto(f.x, f.y)
+            pen.down()
+            pen.forward(f.width)
+            pen.right(90)
+            pen.forward(f.height)
+            pen.right(90)
+            pen.forward(f.width)
+            pen.right(90)
+            pen.forward(f.height)
+            pen.right(90)
+        window.exitonclick()
