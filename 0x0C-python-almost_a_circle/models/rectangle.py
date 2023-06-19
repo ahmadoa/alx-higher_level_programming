@@ -82,10 +82,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints a representation of rect using #"""
-        for posy in range(self.x):
+        for posy in range(self.y):
             print()
         for h in range(self.height):
-            for posx in range(self):
+            for posx in range(self.x):
                 print(" ", end="")
             for w in range(self.width):
                 print("#", end="")
