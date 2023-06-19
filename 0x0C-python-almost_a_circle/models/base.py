@@ -101,8 +101,8 @@ class Base:
                 else:
                     fields = ["id", "size", "x", "y"]
                 w = csv.DictWriter(file, fieldnames=fields)
-                w.writeheader()
-                w.writerows(list_objs)
+                for obj in list_objs:
+                    w.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
